@@ -13,3 +13,16 @@ function deleteNth(arr, n) {
   }
   return result;
 }
+
+// 2. Return the inverse of an array ie. [1, -3, 0] —> [-1, 3, 0]
+function invert(array) {
+  var newArray = [];
+  for (i = 0; i < array.length; i++) {
+    if (array[i] === 0) {
+      newArray.push(0);
+    } else {
+      newArray.push(array[i] * -1);
+    }
+  }
+  return newArray;
+}
