@@ -1,3 +1,4 @@
+// CODEWARS MONTH 1 - MARCH 21- 31st 2018
 // NUMBER 1: Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering. For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
 function deleteNth(arr, n) {
   // ...
@@ -79,4 +80,37 @@ function solution(number) {
     }
   }
   return sum;
+}
+// Number 5: Given an array of integers. Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. If the input array is empty or null, return an empty array- JavaScript will return: []; The passed array should NOT be changed.
+function countPositivesSumNegatives(input) {
+  if (input !== null && input.length > 0) {
+    var countPos = 0;
+    var negSum = 0;
+    for (var i = 0; i < input.length; i++) {
+      if (input[i] > 0) {
+        countPos = countPos + 1;
+      } else {
+        negSum = negSum + input[i];
+      }
+    }
+    var newArr = [];
+    newArr.push(countPos);
+    newArr.push(negSum);
+    console.log(1);
+    return newArr;
+  } else {
+    return [];
+  }
+}
+// OR can do:
+function countPositivesSumNegatives(input) {
+  if (!Array.isArray(input) || !input.length) return [];
+  return input.reduce(
+    (arr, n) => {
+      if (n > 0) arr[0]++;
+      if (n < 0) arr[1] += n;
+      return arr;
+    },
+    [0, 0]
+  );
 }
