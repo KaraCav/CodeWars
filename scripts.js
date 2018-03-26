@@ -120,3 +120,21 @@ function countPositivesSumNegatives(input) {
 function withoutLast(arr) {
   return arr.slice(0, -1);
 }
+// Number 7: Convert number to reversed array of digits. Given a random number, you have to return the digits of this number within an array in reverse order. Ex. 348597 => [7,9,5,8,4,3]
+function digitize(num) {
+  var reversedArray = num
+    .toString()
+    .split('')
+    .reverse();
+  for (var i = 0; i < reversedArray.length; i++) {
+    reversedArray[i] = parseInt(reversedArray[i]);
+  }
+  return reversedArray;
+}
+// OR can do:
+function digitize(n) {
+  return String(n)
+    .split('')
+    .map(Number)
+    .reverse();
+}
