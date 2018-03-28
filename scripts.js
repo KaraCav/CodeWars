@@ -153,3 +153,12 @@ function checkPrime(num) {
   }
 }
 checkPrime(11);
+// Number 9: Given a number, return that number of the fibonacci sequence
+function fib(num) {
+  var fibStart = [0, 1];
+  for (i = 2; i <= num; i++) {
+    fibStart.push(fibStart[i - 1] + fibStart[i - 2]);
+  }
+  return fibStart[num];
+}
+fib(12);
