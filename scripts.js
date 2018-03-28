@@ -138,3 +138,18 @@ function digitize(n) {
     .map(Number)
     .reverse();
 }
+// Number 8: Check if a given number is prime.
+function checkPrime(num) {
+  if (num > 2) {
+    for (i = 2; i < num / 2; i++) {
+      // don't need to check higher than 2x the given #
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  } else {
+    return false;
+  }
+}
+checkPrime(11);
