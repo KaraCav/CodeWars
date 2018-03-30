@@ -162,3 +162,13 @@ function fib(num) {
   return fibStart[num];
 }
 fib(12);
+
+// Number 10: You are provided with an array of integer arrays (or tuples). Each integer array has two items which represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop. Return number of people who are still in the bus after the last station.
+
+var number = function(busStops) {
+  var totalPeeps = 0;
+  for (var i = 0; i < busStops.length; i++) {
+    totalPeeps = totalPeeps + busStops[i][0] - busStops[i][1];
+  }
+  return totalPeeps;
+};
